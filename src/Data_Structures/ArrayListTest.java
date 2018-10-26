@@ -1,4 +1,4 @@
-package Resources;
+package Data_Structures;
 
 import java.util.Arrays;
 

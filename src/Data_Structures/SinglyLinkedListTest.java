@@ -1,42 +1,42 @@
-package Resources;
+package Data_Structures;
 
-public class DoublyLinkedListTest {
-    public static DoublyLinkedList doublyLinkedList;
+public class SinglyLinkedListTest {
+    public static SinglyLinkedList singlyLinkedList;
 
     public static void main(String[] args){
 
-        doublyLinkedList = new DoublyLinkedList();
+        singlyLinkedList = new SinglyLinkedList();
 
         // add elements to list
-        doublyLinkedList.add(1);
-        doublyLinkedList.add(2);
-        doublyLinkedList.add(3);
-        doublyLinkedList.add(4);
-        doublyLinkedList.add(5);
+        singlyLinkedList.add(1);
+        singlyLinkedList.add(2);
+        singlyLinkedList.add(3);
+        singlyLinkedList.add(4);
+        singlyLinkedList.add(5);
 
-        assert doublyLinkedList.get(1).equals(2) : "Incorrect value!";
-        assert doublyLinkedList.size() == 5 : "Incorrect size!";
+        assert singlyLinkedList.get(1).equals(2) : "Incorrect value!";
+        assert singlyLinkedList.size() == 5 : "Incorrect size!";
 
         // remove elements
-        doublyLinkedList.remove(1);
+        singlyLinkedList.remove(1);
 
-        assert doublyLinkedList.get(1).equals(3) : "Incorrect value!";
-        assert doublyLinkedList.size() == 4 : "Incorrect size!";
+        assert singlyLinkedList.get(1).equals(3) : "Incorrect value!";
+        assert singlyLinkedList.size() == 4 : "Incorrect size!";
 
         // set element in list
-        doublyLinkedList.set(1, 2);
+        singlyLinkedList.set(1, 2);
 
-        assert doublyLinkedList.get(1).equals(2) : "Incorrect value!";
+        assert singlyLinkedList.get(1).equals(2) : "Incorrect value!";
     }
 }
 
-class DoublyLinkedList {
+class SinglyLinkedList {
 
     private static int counter;
     private Node head;
 
     // Default constructor
-    public DoublyLinkedList() {
+    public SinglyLinkedList() {
 
     }
 
@@ -146,10 +146,7 @@ class DoublyLinkedList {
                     return;
                 currentNode.getNext();
             }
-            // skip next Node in chain
             currentNode.setNext(currentNode.getNext().getNext());
-            // set previous of new next node
-            currentNode.getNext().setPrevious(currentNode);
 
             // decrement counter
             this.decrementCounter();
@@ -161,9 +158,6 @@ class DoublyLinkedList {
         // References next node in chain
         Node next;
 
-        // References previous node in chain
-        Node prev;
-
         // Data carried by this node.
         Object data;
 
@@ -174,10 +168,9 @@ class DoublyLinkedList {
         }
 
         // Secondary constructor to specify the node to point to
-        public Node(Object dataValue, Node nextNode, Node prevNode) {
-            this.data = dataValue;
+        public Node(Object dataValue, Node nextNode) {
             this.next = nextNode;
-            this.prev = prevNode;
+            this.data = dataValue;
         }
 
         // Getters
@@ -189,10 +182,6 @@ class DoublyLinkedList {
             return this.next;
         }
 
-        public Node getPrevious() {
-            return this.prev;
-        }
-
         // Setters
         public void setData(Object dataValue) {
             this.data = dataValue;
@@ -200,10 +189,6 @@ class DoublyLinkedList {
 
         public void setNext(Node nextNode) {
             this.next = nextNode;
-        }
-
-        public void setPrevious(Node prevNode) {
-            this.prev = prevNode;
         }
     }
 }

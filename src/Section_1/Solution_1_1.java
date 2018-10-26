@@ -1,10 +1,11 @@
+package Section_1;
+
 import java.util.HashMap;
 
 /**
  * Implement an algorithm to determine if a string has all unique characters.
  * What if you cannot use additional data structures?
  */
-
 public class Solution_1_1 {
 
     /**
