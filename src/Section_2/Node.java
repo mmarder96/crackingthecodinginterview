@@ -3,7 +3,7 @@ package Section_2;
 /**
  * A simple singly linked list class for use in section 2 problems.
  */
-public class Node {
+public class Node implements Cloneable{
     Node next = null;
     int data;
 
@@ -53,5 +53,19 @@ public class Node {
         }
 
         return null;
+    }
+
+    @Override
+    public Node clone() {
+        Node node = null;
+        try {
+             node = (Node) super.clone();
+        } catch (CloneNotSupportedException e) {
+            node = new Node(this.data);
+        }
+        if (node.next != null){
+            node.next = this.next.clone();
+        }
+        return node;
     }
 }

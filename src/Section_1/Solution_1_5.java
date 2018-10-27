@@ -30,6 +30,7 @@ public class Solution_1_5 {
     }
 
     public static void main(String[] args){
-        System.out.print(compress("aabcccccaaab"));
+        System.out.println(compress("aabcccccaaab"));
+        System.out.println(compress("abcdefg"));
     }
 }
