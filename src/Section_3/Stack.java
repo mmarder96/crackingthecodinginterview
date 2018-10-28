@@ -19,6 +19,8 @@ public class Stack<T> {
     }
 
     T peek() {
-        return top.data;
+        if (top != null)
+            return top.data;
+        return null;
     }
 }
