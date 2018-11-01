@@ -23,4 +23,10 @@ public class Stack<T> {
             return top.data;
         return null;
     }
+
+    Boolean isEmpty(){
+        if (top == null)
+            return true;
+        return false;
+    }
 }
